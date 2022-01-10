@@ -9,6 +9,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitMQWorkerConsumer", "W
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitMqWorkerProducer", "Worker\Producer\RabbitMqWorkerProducer.csproj", "{B5B82A71-416E-4C00-877D-8B4D855A9EB2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RoundRobinPattern", "RoundRobinPattern", "{63797997-3849-4F36-9F7E-EC6EBF5B1333}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoundRobinProducer", "RoundRobinPattern\RoundRobinProducer\RoundRobinProducer.csproj", "{1788DB25-5A79-4FBC-B007-6343E1DD9F10}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +27,10 @@ Global
 		{B5B82A71-416E-4C00-877D-8B4D855A9EB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5B82A71-416E-4C00-877D-8B4D855A9EB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5B82A71-416E-4C00-877D-8B4D855A9EB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1788DB25-5A79-4FBC-B007-6343E1DD9F10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1788DB25-5A79-4FBC-B007-6343E1DD9F10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1788DB25-5A79-4FBC-B007-6343E1DD9F10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1788DB25-5A79-4FBC-B007-6343E1DD9F10}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -30,6 +38,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{7EEBD5FC-20F7-4F8C-BA77-E89AE6C8571A} = {5D2278BE-6E85-4008-8DAA-83446C3A7659}
 		{B5B82A71-416E-4C00-877D-8B4D855A9EB2} = {5D2278BE-6E85-4008-8DAA-83446C3A7659}
+		{1788DB25-5A79-4FBC-B007-6343E1DD9F10} = {63797997-3849-4F36-9F7E-EC6EBF5B1333}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {73CA29D7-AA33-49C6-9CEB-43B35D9FB853}
