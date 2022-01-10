@@ -4,6 +4,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using static System.Console;
+
 namespace MultiplosWorkersChannelsProducer
 {
     class Program
@@ -27,17 +28,22 @@ namespace MultiplosWorkersChannelsProducer
                 };
                 using (var connection = factory.CreateConnection())
                 {
-
+                    int count = 0;
                     // Poderiamos aplicar o Pattner AbstractFactory
+                    // para publicador nao podemos reaproveitar channels, a melhor prática será criara um channel exclusivo.
+                    // para consumidor podemos reaproveitar channel, ou criar um channel para grupos de consumudores
                     var queueName = "orderQueue";
                     var channel1 = CreateChannel(connection);
                     var channel2 = CreateChannel(connection);
                     var channel3 = CreateChannel(connection);
+                    while (true)
+                    {
 
-                    BuildPublishers(channel1, queueName, "Produtor A");
-                    BuildPublishers(channel2, queueName, "Produtor B");
-                    BuildPublishers(channel3, queueName, "Produtor C");
-
+                        await BuildPublishers(channel1, queueName, "Produtor A", count);
+                        await BuildPublishers(channel2, queueName, "Produtor B", count);
+                        await BuildPublishers(channel3, queueName, "Produtor C", count);
+                        count++;
+                    }
                     ReadLine();
                 }
 
@@ -53,33 +59,29 @@ namespace MultiplosWorkersChannelsProducer
 
 
 
-        private static void BuildPublishers(IModel channel, string queueName, string publishName)
+        private static async Task BuildPublishers(IModel channel, string queueName, string publishName, int menssagemNumber)
         {
-
-            Task.Run(() =>
+            await Task.Run(() =>
             {
-                int count = 0;
-
                 channel.QueueDeclare(queue: queueName,
                                          durable: false,
                                          exclusive: false,
                                          autoDelete: false,
                                          arguments: null);
-                while (true)
-                {
-
-                    string message = $"Mensagem: {publishName} : Enviando {count++}";
-                    var body = Encoding.UTF8.GetBytes(message);
-
-                    channel.BasicPublish(exchange: "",
-                                         routingKey: queueName,
-                                         basicProperties: null,
-                                         body: body);
 
 
-                    WriteLine($" [x]: {message}");
-                    Thread.Sleep(2000);
-                }
+                string message = $"ChannelNumber {channel.ChannelNumber} | PublishName: {publishName} : Mensagem Number: {menssagemNumber++}";
+                var body = Encoding.UTF8.GetBytes(message);
+
+                channel.BasicPublish(exchange: "",
+                                     routingKey: queueName,
+                                     basicProperties: null,
+                                     body: body);
+
+
+                WriteLine($" [x]: {message}");
+                Thread.Sleep(1000);
+
             });
         }
     }

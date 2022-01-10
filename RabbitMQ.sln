@@ -19,6 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MultiplosWorkersChannels", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiplosWorkersChannelsProducer", "MultiplosWorkersChannels\MultiplosWorkersChannelsProducer\MultiplosWorkersChannelsProducer.csproj", "{98DB3FF1-3086-400D-8B76-AFE95C2AE068}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiplosWorkersChannelsConsumer", "MultiplosWorkersChannels\MultiplosWorkersChannelsConsumer\MultiplosWorkersChannelsConsumer.csproj", "{0AFC7DA7-F947-4FFD-A641-1AA1521A018A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{98DB3FF1-3086-400D-8B76-AFE95C2AE068}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98DB3FF1-3086-400D-8B76-AFE95C2AE068}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98DB3FF1-3086-400D-8B76-AFE95C2AE068}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AFC7DA7-F947-4FFD-A641-1AA1521A018A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AFC7DA7-F947-4FFD-A641-1AA1521A018A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AFC7DA7-F947-4FFD-A641-1AA1521A018A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AFC7DA7-F947-4FFD-A641-1AA1521A018A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +61,7 @@ Global
 		{1788DB25-5A79-4FBC-B007-6343E1DD9F10} = {63797997-3849-4F36-9F7E-EC6EBF5B1333}
 		{5BB56C74-DB84-46A7-AFC1-47556DB195C0} = {63797997-3849-4F36-9F7E-EC6EBF5B1333}
 		{98DB3FF1-3086-400D-8B76-AFE95C2AE068} = {8F414280-130D-44C6-9C4B-6B9570089F60}
+		{0AFC7DA7-F947-4FFD-A641-1AA1521A018A} = {8F414280-130D-44C6-9C4B-6B9570089F60}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {73CA29D7-AA33-49C6-9CEB-43B35D9FB853}
