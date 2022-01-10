@@ -17,7 +17,13 @@ namespace RabbitMQWorkerConsumer
 
 
 
-            var factory = new ConnectionFactory() { HostName = "127.0.0.1" };
+            var factory = new ConnectionFactory()
+            {
+                UserName = "guest",
+                Password = "guest",
+                HostName = "127.0.0.1",
+                Port = 5672
+            };
             using (var connection = factory.CreateConnection())
             using (var channel = connection.CreateModel())
             {
