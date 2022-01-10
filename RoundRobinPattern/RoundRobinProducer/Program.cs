@@ -38,7 +38,6 @@ namespace RoundRobinProducer
                                          autoDelete: false,
                                          arguments: null);
                     int count = 0;
-
                     while (true)
                     {
 
@@ -52,7 +51,7 @@ namespace RoundRobinProducer
 
 
                         WriteLine($" [x] Enviando Mensagem: {message}");
-                        await Task.Delay(200);
+                        await Task.Delay(2000);
                     }
                 }
 
