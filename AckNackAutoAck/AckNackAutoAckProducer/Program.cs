@@ -8,7 +8,7 @@ namespace AckNackAutoAckProducer
 {
     class Program
     {
-        static async Task Main(string[] args)
+        static void Main(string[] args)
         {
             WriteLine("RabbitMQ - Ack Nack AutoAck com C# .Net Core Confirmação de Recebimento e o ManualResetEvent para segurar a execução de uma Thread até que receba um evento.!");
             WriteLine("Populando fila no Rabbit!");
@@ -53,7 +53,7 @@ namespace AckNackAutoAckProducer
             }
             catch (System.Exception)
             {
-              
+
             }
         }
         private static IModel CreateChannel(IConnection connection) => connection.CreateModel();
@@ -73,14 +73,14 @@ namespace AckNackAutoAckProducer
                while (true)
                {
 
-                   WriteLine("Pressione qualquer tecla para publicar 100 mensagens");
+                   WriteLine("Pressione qualquer tecla para publicar 10 mensagens");
                    ReadKey();
 
                    try
                    {
-                       for (int i = 0; i < 100; i++)
+                       for (int i = 0; i < 10; i++)
                        {
-                           string message = $"Mensagem Number {menssagemNumber++} | from: {publishName} ";
+                           string message = $"Mensagem(Count loop) Number {menssagemNumber++} | from: {publishName} ";
                            var body = Encoding.UTF8.GetBytes(message);
 
                            channel.BasicPublish(exchange: "",
@@ -90,15 +90,15 @@ namespace AckNackAutoAckProducer
 
 
                            WriteLine($" [x]: {message}");
-                            // Thread.Sleep(1000);
-                        }
+                           Thread.Sleep(500);
+                       }
                    }
                    catch (Exception ex)
                    {
                        WriteLine(ex.Message);
 
-                        //Libera a thread para proximo processamento.
-                        manualResetEvent.Set();
+                       //Libera a thread para proximo processamento.
+                       manualResetEvent.Set();
                    }
                }
            });

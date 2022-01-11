@@ -83,32 +83,32 @@ namespace AckNackAutoAckConsumer
                 try
                 {
 
-                        //AQUI TEMOS O MOMENTO DA APLICAÇÃO DE REGRAS DE NEGOCIO.
+                    //AQUI TEMOS O MOMENTO DA APLICAÇÃO DE REGRAS DE NEGOCIO.
 
 
-                        var body = ea.Body.ToArray();
+                    var body = ea.Body.ToArray();
                     var message = Encoding.UTF8.GetString(body);
                     Console.WriteLine($"{channel.ChannelNumber} - {workerName} |  [x] Recebendo Notificação {message}");
 
 
 
-                        //throw new Exception("ERRO DE REGRA DE NEGOCIO");
+                    //throw new Exception("ERRO DE REGRA DE NEGOCIO");
 
-                        //A CONFIRMAÇÃO MANUAL É FEITA PELO CHANNEL
-                        // confirma a remoção da mensagem 1 a 1 utilizando o false.
-                        channel.BasicAck(ea.DeliveryTag, false);
+                    //A CONFIRMAÇÃO MANUAL É FEITA PELO CHANNEL
+                    // confirma a remoção da mensagem 1 a 1 utilizando o false.
+                    channel.BasicAck(ea.DeliveryTag, false);
                 }
                 catch (Exception ex)
                 {
 
 
-                        // UMA MANEIRA DE DEIXAR RESILIENTE NOSSAS APP.
-                        channel.BasicNack(ea.DeliveryTag, false, true);
+                    // UMA MANEIRA DE DEIXAR RESILIENTE NOSSAS APP.
+                    channel.BasicNack(ea.DeliveryTag, false, true);
 
 
-                        // LOG ETC...
-
-                    }
+                    // LOG ETC...
+                    Console.WriteLine(ex.Message);
+                }
             };
 
             // CONFIRMAÇÃO AUTOMÁTICA QUANDO TRUE,

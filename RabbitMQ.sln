@@ -27,6 +27,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AckNackAutoAckProducer", "A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AckNackAutoAckConsumer", "AckNackAutoAck\AckNackAutoAckConsumer\AckNackAutoAckConsumer.csproj", "{8F279623-1A38-4E8A-A9A1-B10B75EFD02B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Prefetch", "Prefetch", "{8EA05176-2CEB-4843-9B2A-4C11FA7C48F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrefetchConsumer", "Prefetch\PrefetchConsumer\PrefetchConsumer.csproj", "{065DA7EF-AAFD-4810-8902-B1B998FCB58D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,6 +69,10 @@ Global
 		{8F279623-1A38-4E8A-A9A1-B10B75EFD02B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F279623-1A38-4E8A-A9A1-B10B75EFD02B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F279623-1A38-4E8A-A9A1-B10B75EFD02B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{065DA7EF-AAFD-4810-8902-B1B998FCB58D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{065DA7EF-AAFD-4810-8902-B1B998FCB58D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{065DA7EF-AAFD-4810-8902-B1B998FCB58D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{065DA7EF-AAFD-4810-8902-B1B998FCB58D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -78,6 +86,7 @@ Global
 		{0AFC7DA7-F947-4FFD-A641-1AA1521A018A} = {8F414280-130D-44C6-9C4B-6B9570089F60}
 		{BCCE9BC8-5459-404A-819D-A3E5EE1A82B1} = {D573C6A9-9C14-4FA4-A3B8-D2412D33C91A}
 		{8F279623-1A38-4E8A-A9A1-B10B75EFD02B} = {D573C6A9-9C14-4FA4-A3B8-D2412D33C91A}
+		{065DA7EF-AAFD-4810-8902-B1B998FCB58D} = {8EA05176-2CEB-4843-9B2A-4C11FA7C48F9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {73CA29D7-AA33-49C6-9CEB-43B35D9FB853}
