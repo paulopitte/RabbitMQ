@@ -42,7 +42,7 @@ namespace AckNackAutoAckConsumer
 
                 for (int channelIndex = 0; channelIndex < 2; channelIndex++)
                 {
-                    var queueName = "orderQueue";
+                    var queueName = "orderQueue"; // independente do exchange
                     var channel = await CreateChannel(connection);
 
                     // para publicador nao podemos reaproveitar channels, a melhor prática será criara um channel exclusivo.
