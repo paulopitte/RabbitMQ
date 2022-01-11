@@ -49,8 +49,6 @@ namespace DirectProducer
 
                 using (var connection = factory.CreateConnection())
                 {
-
-
                     // TODO: Poderiamos aplicar o Pattner AbstractFactory
 
                     // Atenção: para publicador nao podemos reaproveitar channels, a melhor prática será criara um channel exclusivo.
@@ -60,11 +58,13 @@ namespace DirectProducer
                     var channel2 = SetupChannel(connection);
                     var channel3 = SetupChannel(connection);
                     var channel4 = SetupChannel(connection);
+                    var channel5 = SetupChannel(connection);
 
-                    BuildAndRunPublishers(channel1, "Produtor A", manualResetEvent);
-                    BuildAndRunPublishers(channel2, "Produtor B", manualResetEvent);
-                    BuildAndRunPublishers(channel3, "Produtor C", manualResetEvent);
-                    BuildAndRunPublishers(channel4, "Produtor D", manualResetEvent);
+                    BuildAndRunPublishers(channel1, "Produtor A - canal 1", manualResetEvent);
+                    BuildAndRunPublishers(channel2, "Produtor B - canal 2", manualResetEvent);
+                    BuildAndRunPublishers(channel3, "Produtor C - canal 3", manualResetEvent);
+                    BuildAndRunPublishers(channel4, "Produtor D - canal 4", manualResetEvent);
+                    BuildAndRunPublishers(channel5, "Produtor E - canal 5", manualResetEvent);
 
                     //Trava a subthread para execução da publicação.
                     manualResetEvent.WaitOne();
