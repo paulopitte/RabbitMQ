@@ -9,7 +9,7 @@ using static System.Console;
 namespace DirectProducer
 {
 
-    class Program
+    internal sealed class Program
     {
 
         /*
@@ -104,7 +104,7 @@ namespace DirectProducer
 
             Task.Run(() =>
           {
-              Parallel.For(0, 10000000, i =>
+              Parallel.For(0, 100000000, i =>
                      {
 
                          var randon = new Random(DateTime.UtcNow.Millisecond * DateTime.UtcNow.Second);
@@ -125,16 +125,11 @@ namespace DirectProducer
                              channel.BasicPublish("order", "order_upd", null, message2);
                              WriteLine($"Pedido Atualizado {order.Id} || Amount: {order.Amount} || Atualizado em: {order.LastUpdate:o}");
 
-
                              message2 = null;
-
-
                          }
                          catch (Exception ex)
                          {
                              WriteLine(ex.Message);
-
-                             //Libera a thread para proximo processamento.
                              manualResetEvent.Set();
                          }
                          finally
@@ -142,7 +137,6 @@ namespace DirectProducer
                              message1 = null;
                              order = null;
                              randon = null;
-
                          }
                      });
           });
