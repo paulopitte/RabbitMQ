@@ -58,7 +58,6 @@ namespace MultiplosWorkersChannelsConsumer
             }
         }
 
-
         private static async ValueTask<IModel> CreateChannel(IConnection connection) =>
              connection.CreateModel();
 

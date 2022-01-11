@@ -11,8 +11,8 @@ namespace MultiplosWorkersChannelsProducer
     {
         static async Task Main(string[] args)
         {
-            Console.WriteLine("RabbitMQ C# .Net Core Multiplos Workers e Channels!");
-            Console.WriteLine("Populando fila no Rabbit!");
+            WriteLine("RabbitMQ C# .Net Core Multiplos Workers e Channels!");
+            WriteLine("Populando fila no Rabbit!");
 
 
             try
@@ -53,12 +53,8 @@ namespace MultiplosWorkersChannelsProducer
 
             }
         }
-
         private static IModel CreateChannel(IConnection connection) =>
              connection.CreateModel();
-
-
-
         private static async Task BuildPublishers(IModel channel, string queueName, string publishName, int menssagemNumber)
         {
             await Task.Run(() =>
