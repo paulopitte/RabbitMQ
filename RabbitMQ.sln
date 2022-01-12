@@ -45,6 +45,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MessageTTLExpirationPattern
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageTTLExpirationConsumer", "MessageTTLExpirationPattern\MessageTTLExpirationConsumer\MessageTTLExpirationConsumer.csproj", "{AAA3A664-46B2-47C2-A27B-EA9650361A79}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PersistenceMessageDurableQueue", "PersistenceMessageDurableQueue", "{A931B2A1-C202-46F8-84AB-420F6EFB781E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersistenceMessageDurableQueueProducer", "PersistenceMessageDurableQueue\PersistenceMessageDurableQueueProducer\PersistenceMessageDurableQueueProducer.csproj", "{E973C404-1A6A-4F0B-9A02-075CD4CA9827}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -103,6 +107,10 @@ Global
 		{AAA3A664-46B2-47C2-A27B-EA9650361A79}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AAA3A664-46B2-47C2-A27B-EA9650361A79}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AAA3A664-46B2-47C2-A27B-EA9650361A79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E973C404-1A6A-4F0B-9A02-075CD4CA9827}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E973C404-1A6A-4F0B-9A02-075CD4CA9827}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E973C404-1A6A-4F0B-9A02-075CD4CA9827}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E973C404-1A6A-4F0B-9A02-075CD4CA9827}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -121,6 +129,7 @@ Global
 		{2AD0BBB8-FC1A-4F14-9E44-0392CE0AE4FC} = {2692C1F4-1AA9-4B36-99DB-8AAD4071C444}
 		{F7CC8A0C-12F5-442C-ABA5-55EECD879212} = {5ADAD9F1-8B07-4FFC-81EB-3A119CE7C92C}
 		{AAA3A664-46B2-47C2-A27B-EA9650361A79} = {62C85F68-2CC6-4A26-9556-D9CD94FB893A}
+		{E973C404-1A6A-4F0B-9A02-075CD4CA9827} = {A931B2A1-C202-46F8-84AB-420F6EFB781E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {73CA29D7-AA33-49C6-9CEB-43B35D9FB853}

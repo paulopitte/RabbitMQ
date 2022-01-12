@@ -45,7 +45,11 @@ namespace MessageTTLExpirationConsumer
                 };
 
 
-                channel.QueueDeclare(queueName, false, false, false, argumento);
+                channel.QueueDeclare(queue: queueName,
+                    durable: false, 
+                    false, 
+                    false, 
+                    argumento);
 
                 var body = Encoding.UTF8.GetBytes($" Notificação gerada em: {DateTime.UtcNow.AddHours(-3)}");
 
