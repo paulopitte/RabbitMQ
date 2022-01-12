@@ -37,6 +37,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FanoutProducer", "Exchange\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectProducer", "Exchange\DirectProducer\DirectProducer.csproj", "{2AD0BBB8-FC1A-4F14-9E44-0392CE0AE4FC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DeadLetterStrategy", "DeadLetterStrategy", "{5ADAD9F1-8B07-4FFC-81EB-3A119CE7C92C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeadLetterConsumer", "DeadLetterStrategy\DeadLetterConsumer\DeadLetterConsumer.csproj", "{F7CC8A0C-12F5-442C-ABA5-55EECD879212}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +91,10 @@ Global
 		{2AD0BBB8-FC1A-4F14-9E44-0392CE0AE4FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2AD0BBB8-FC1A-4F14-9E44-0392CE0AE4FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2AD0BBB8-FC1A-4F14-9E44-0392CE0AE4FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7CC8A0C-12F5-442C-ABA5-55EECD879212}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7CC8A0C-12F5-442C-ABA5-55EECD879212}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7CC8A0C-12F5-442C-ABA5-55EECD879212}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7CC8A0C-12F5-442C-ABA5-55EECD879212}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -103,6 +111,7 @@ Global
 		{065DA7EF-AAFD-4810-8902-B1B998FCB58D} = {8EA05176-2CEB-4843-9B2A-4C11FA7C48F9}
 		{225A8AE5-A626-4767-8C5C-B5B9F69349FC} = {2692C1F4-1AA9-4B36-99DB-8AAD4071C444}
 		{2AD0BBB8-FC1A-4F14-9E44-0392CE0AE4FC} = {2692C1F4-1AA9-4B36-99DB-8AAD4071C444}
+		{F7CC8A0C-12F5-442C-ABA5-55EECD879212} = {5ADAD9F1-8B07-4FFC-81EB-3A119CE7C92C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {73CA29D7-AA33-49C6-9CEB-43B35D9FB853}
