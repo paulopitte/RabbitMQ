@@ -46,7 +46,7 @@ namespace MessageTTLExpirationConsumer
 
 
                 channel.QueueDeclare(queue: queueName,
-                    durable: false, 
+                    durable: true, 
                     false, 
                     false, 
                     argumento);

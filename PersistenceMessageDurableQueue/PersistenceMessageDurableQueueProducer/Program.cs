@@ -29,22 +29,28 @@ namespace PersistenceMessageDurableQueueProducer
             using (var conn = factory.CreateConnection())
             using (var channel = conn.CreateModel())
             {
-                var queueName = "test_time_to_live";
-
-
-
+                var queueName = "helloQueue";
 
                 channel.QueueDeclare(queue: queueName,
-                                     durable: false,
+                                     durable: true, // esse parametro diz ao Rabbit que a fila não será excluida caso a reinicialização da app ou container, etc...
                                      exclusive: false,
                                      autoDelete: false,
                                      arguments: null);
 
-                var body = Encoding.UTF8.GetBytes($" Notificação gerada em: {DateTime.UtcNow.AddHours(-3)}");
- 
-                channel.BasicPublish(exchange: "", routingKey: queueName, basicProperties: null, body: body);
+                var baseProp = channel.CreateBasicProperties();
 
-                Console.WriteLine(" Precione enter para continuar. ");
+                // Esta propriedade configura ao Rabbbit em manter a Mensagem persistida mesmo desligando o container ou alguma falha de infra, etc...
+                baseProp.Persistent = true; // persiste fisicamente no disco
+
+
+                string msg = $" Notificação gerada em: {DateTime.UtcNow.AddHours(-3)}";
+                var body = Encoding.UTF8.GetBytes(msg);
+ 
+
+
+                channel.BasicPublish(exchange: "", routingKey: queueName, basicProperties: baseProp, body: body);
+                Console.WriteLine(msg);
+                Console.WriteLine(" Pressione enter para continuar. ");
                 Console.ReadLine();
             }
 
