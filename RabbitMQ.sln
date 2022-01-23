@@ -11,43 +11,47 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitMqWorkerProducer", "W
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RoundRobinPattern", "RoundRobinPattern", "{63797997-3849-4F36-9F7E-EC6EBF5B1333}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoundRobinProducer", "RoundRobinPattern\RoundRobinProducer\RoundRobinProducer.csproj", "{1788DB25-5A79-4FBC-B007-6343E1DD9F10}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoundRobinProducer", "RoundRobinPattern\RoundRobinProducer\RoundRobinProducer.csproj", "{1788DB25-5A79-4FBC-B007-6343E1DD9F10}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoundRobinConsumer", "RoundRobinPattern\RoundRobinConsumer\RoundRobinConsumer.csproj", "{5BB56C74-DB84-46A7-AFC1-47556DB195C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoundRobinConsumer", "RoundRobinPattern\RoundRobinConsumer\RoundRobinConsumer.csproj", "{5BB56C74-DB84-46A7-AFC1-47556DB195C0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MultiplosWorkersChannels", "MultiplosWorkersChannels", "{8F414280-130D-44C6-9C4B-6B9570089F60}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiplosWorkersChannelsProducer", "MultiplosWorkersChannels\MultiplosWorkersChannelsProducer\MultiplosWorkersChannelsProducer.csproj", "{98DB3FF1-3086-400D-8B76-AFE95C2AE068}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultiplosWorkersChannelsProducer", "MultiplosWorkersChannels\MultiplosWorkersChannelsProducer\MultiplosWorkersChannelsProducer.csproj", "{98DB3FF1-3086-400D-8B76-AFE95C2AE068}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiplosWorkersChannelsConsumer", "MultiplosWorkersChannels\MultiplosWorkersChannelsConsumer\MultiplosWorkersChannelsConsumer.csproj", "{0AFC7DA7-F947-4FFD-A641-1AA1521A018A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultiplosWorkersChannelsConsumer", "MultiplosWorkersChannels\MultiplosWorkersChannelsConsumer\MultiplosWorkersChannelsConsumer.csproj", "{0AFC7DA7-F947-4FFD-A641-1AA1521A018A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AckNackAutoAck", "AckNackAutoAck", "{D573C6A9-9C14-4FA4-A3B8-D2412D33C91A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AckNackAutoAckProducer", "AckNackAutoAck\AckNackAutoAckProducer\AckNackAutoAckProducer.csproj", "{BCCE9BC8-5459-404A-819D-A3E5EE1A82B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AckNackAutoAckProducer", "AckNackAutoAck\AckNackAutoAckProducer\AckNackAutoAckProducer.csproj", "{BCCE9BC8-5459-404A-819D-A3E5EE1A82B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AckNackAutoAckConsumer", "AckNackAutoAck\AckNackAutoAckConsumer\AckNackAutoAckConsumer.csproj", "{8F279623-1A38-4E8A-A9A1-B10B75EFD02B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AckNackAutoAckConsumer", "AckNackAutoAck\AckNackAutoAckConsumer\AckNackAutoAckConsumer.csproj", "{8F279623-1A38-4E8A-A9A1-B10B75EFD02B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Prefetch", "Prefetch", "{8EA05176-2CEB-4843-9B2A-4C11FA7C48F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrefetchConsumer", "Prefetch\PrefetchConsumer\PrefetchConsumer.csproj", "{065DA7EF-AAFD-4810-8902-B1B998FCB58D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrefetchConsumer", "Prefetch\PrefetchConsumer\PrefetchConsumer.csproj", "{065DA7EF-AAFD-4810-8902-B1B998FCB58D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exchange", "Exchange", "{2692C1F4-1AA9-4B36-99DB-8AAD4071C444}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FanoutProducer", "Exchange\Fanout\FanoutProducer\FanoutProducer.csproj", "{225A8AE5-A626-4767-8C5C-B5B9F69349FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FanoutProducer", "Exchange\Fanout\FanoutProducer\FanoutProducer.csproj", "{225A8AE5-A626-4767-8C5C-B5B9F69349FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectProducer", "Exchange\DirectProducer\DirectProducer.csproj", "{2AD0BBB8-FC1A-4F14-9E44-0392CE0AE4FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DirectProducer", "Exchange\DirectProducer\DirectProducer.csproj", "{2AD0BBB8-FC1A-4F14-9E44-0392CE0AE4FC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DeadLetterStrategy", "DeadLetterStrategy", "{5ADAD9F1-8B07-4FFC-81EB-3A119CE7C92C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeadLetterConsumer", "DeadLetterStrategy\DeadLetterConsumer\DeadLetterConsumer.csproj", "{F7CC8A0C-12F5-442C-ABA5-55EECD879212}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeadLetterConsumer", "DeadLetterStrategy\DeadLetterConsumer\DeadLetterConsumer.csproj", "{F7CC8A0C-12F5-442C-ABA5-55EECD879212}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MessageTTLExpirationPattern", "MessageTTLExpirationPattern", "{62C85F68-2CC6-4A26-9556-D9CD94FB893A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageTTLExpirationConsumer", "MessageTTLExpirationPattern\MessageTTLExpirationConsumer\MessageTTLExpirationConsumer.csproj", "{AAA3A664-46B2-47C2-A27B-EA9650361A79}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MessageTTLExpirationConsumer", "MessageTTLExpirationPattern\MessageTTLExpirationConsumer\MessageTTLExpirationConsumer.csproj", "{AAA3A664-46B2-47C2-A27B-EA9650361A79}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PersistenceMessageDurableQueue", "PersistenceMessageDurableQueue", "{A931B2A1-C202-46F8-84AB-420F6EFB781E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersistenceMessageDurableQueueProducer", "PersistenceMessageDurableQueue\PersistenceMessageDurableQueueProducer\PersistenceMessageDurableQueueProducer.csproj", "{E973C404-1A6A-4F0B-9A02-075CD4CA9827}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersistenceMessageDurableQueueProducer", "PersistenceMessageDurableQueue\PersistenceMessageDurableQueueProducer\PersistenceMessageDurableQueueProducer.csproj", "{E973C404-1A6A-4F0B-9A02-075CD4CA9827}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PuslishConfirmationReturnMessage", "PuslishConfirmationReturnMessage", "{39469E5F-D638-4C33-AB8B-3F688E828414}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Producer", "PublicConfirmationReturnMessage\Producer\Producer.csproj", "{A687D293-CDBD-4B52-91AA-C385AA8D72C0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -111,6 +115,10 @@ Global
 		{E973C404-1A6A-4F0B-9A02-075CD4CA9827}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E973C404-1A6A-4F0B-9A02-075CD4CA9827}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E973C404-1A6A-4F0B-9A02-075CD4CA9827}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A687D293-CDBD-4B52-91AA-C385AA8D72C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A687D293-CDBD-4B52-91AA-C385AA8D72C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A687D293-CDBD-4B52-91AA-C385AA8D72C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A687D293-CDBD-4B52-91AA-C385AA8D72C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -130,6 +138,7 @@ Global
 		{F7CC8A0C-12F5-442C-ABA5-55EECD879212} = {5ADAD9F1-8B07-4FFC-81EB-3A119CE7C92C}
 		{AAA3A664-46B2-47C2-A27B-EA9650361A79} = {62C85F68-2CC6-4A26-9556-D9CD94FB893A}
 		{E973C404-1A6A-4F0B-9A02-075CD4CA9827} = {A931B2A1-C202-46F8-84AB-420F6EFB781E}
+		{A687D293-CDBD-4B52-91AA-C385AA8D72C0} = {39469E5F-D638-4C33-AB8B-3F688E828414}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {73CA29D7-AA33-49C6-9CEB-43B35D9FB853}
