@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.32002.261
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Worker", "Worker", "{5D2278BE-6E85-4008-8DAA-83446C3A7659}"
 EndProject
@@ -51,7 +51,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersistenceMessageDurableQu
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PuslishConfirmationReturnMessage", "PuslishConfirmationReturnMessage", "{39469E5F-D638-4C33-AB8B-3F688E828414}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Producer", "PublicConfirmationReturnMessage\Producer\Producer.csproj", "{A687D293-CDBD-4B52-91AA-C385AA8D72C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Producer", "PublicConfirmationReturnMessage\Producer\Producer.csproj", "{A687D293-CDBD-4B52-91AA-C385AA8D72C0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RPC-RemoteProcedureCall", "RPC-RemoteProcedureCall", "{3C3C149E-F62F-4A99-BFD4-5692FB328A0A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMQ-RPC_Client", "RPC-Remote-Procedure-Call\RabbitMQ-RPC_Client\RabbitMQ-RPC_Client.csproj", "{193D9705-DF32-48BC-AFE3-3D52EA093A0E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -119,6 +123,10 @@ Global
 		{A687D293-CDBD-4B52-91AA-C385AA8D72C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A687D293-CDBD-4B52-91AA-C385AA8D72C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A687D293-CDBD-4B52-91AA-C385AA8D72C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{193D9705-DF32-48BC-AFE3-3D52EA093A0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{193D9705-DF32-48BC-AFE3-3D52EA093A0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{193D9705-DF32-48BC-AFE3-3D52EA093A0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{193D9705-DF32-48BC-AFE3-3D52EA093A0E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -139,6 +147,7 @@ Global
 		{AAA3A664-46B2-47C2-A27B-EA9650361A79} = {62C85F68-2CC6-4A26-9556-D9CD94FB893A}
 		{E973C404-1A6A-4F0B-9A02-075CD4CA9827} = {A931B2A1-C202-46F8-84AB-420F6EFB781E}
 		{A687D293-CDBD-4B52-91AA-C385AA8D72C0} = {39469E5F-D638-4C33-AB8B-3F688E828414}
+		{193D9705-DF32-48BC-AFE3-3D52EA093A0E} = {3C3C149E-F62F-4A99-BFD4-5692FB328A0A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {73CA29D7-AA33-49C6-9CEB-43B35D9FB853}

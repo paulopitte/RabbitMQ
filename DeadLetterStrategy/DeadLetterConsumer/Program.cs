@@ -15,7 +15,7 @@ namespace DeadLetterConsumer
          * A Idéia é interromper o message Loop, ou seja uma mensagem em processamento caso ocorra algum problema na entidade ou atributo, etc..
          * podemos remover a fila de processamento e move-la para uma fila de erros na qual iremos tratar posteriormente.
          * 
-         * podemos realizar uma contagem, tipo tente processar 5x caso nao tenha exito entao movemos para fila de erros.
+         * podemos realizar uma contagem, tipo tente processar 5x caso nao tenha êxito entao movemos para fila de erros.
          * 
          */
 
