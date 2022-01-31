@@ -57,6 +57,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RPC-RemoteProcedureCall", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMQ-RPC_Client", "RPC-Remote-Procedure-Call\RabbitMQ-RPC_Client\RabbitMQ-RPC_Client.csproj", "{193D9705-DF32-48BC-AFE3-3D52EA093A0E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMQ-RPC-Server", "RPC-Remote-Procedure-Call\RabbitMQ-RPC-Server\RabbitMQ-RPC-Server.csproj", "{8D25A745-9741-4102-BC9D-6EC542962C85}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -127,6 +129,10 @@ Global
 		{193D9705-DF32-48BC-AFE3-3D52EA093A0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{193D9705-DF32-48BC-AFE3-3D52EA093A0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{193D9705-DF32-48BC-AFE3-3D52EA093A0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D25A745-9741-4102-BC9D-6EC542962C85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D25A745-9741-4102-BC9D-6EC542962C85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D25A745-9741-4102-BC9D-6EC542962C85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D25A745-9741-4102-BC9D-6EC542962C85}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -148,6 +154,7 @@ Global
 		{E973C404-1A6A-4F0B-9A02-075CD4CA9827} = {A931B2A1-C202-46F8-84AB-420F6EFB781E}
 		{A687D293-CDBD-4B52-91AA-C385AA8D72C0} = {39469E5F-D638-4C33-AB8B-3F688E828414}
 		{193D9705-DF32-48BC-AFE3-3D52EA093A0E} = {3C3C149E-F62F-4A99-BFD4-5692FB328A0A}
+		{8D25A745-9741-4102-BC9D-6EC542962C85} = {3C3C149E-F62F-4A99-BFD4-5692FB328A0A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {73CA29D7-AA33-49C6-9CEB-43B35D9FB853}

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 
-namespace RoundRobinConsumer
+namespace RabbitMQRPC_Client
 {
     class Program
     {
@@ -83,7 +83,7 @@ namespace RoundRobinConsumer
 
                 channel.BasicPublish(exchange: "", routingKey: nameof(Order), basicProperties: Props, body: body);
 
-                Console.WriteLine("Mensagem Publicada....", $"{message}\n\n");
+                Console.WriteLine($"Mensagem Publicada....{message}\n\n");
                 Console.ReadKey();
                 Console.Clear();
 

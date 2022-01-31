@@ -1,4 +1,5 @@
-﻿
+﻿using Services;
+
 namespace Domain
 {
     public class Order
@@ -7,7 +8,7 @@ namespace Domain
         {
             Id = DateTime.Now.Ticks;
             Amount = amount;
-            OrderStatus = OrderStatus.Processing;
+            OrderStatus = OrderServices.OnStore(amount);
         }
 
         public long Id { get; set; }
@@ -15,16 +16,15 @@ namespace Domain
         public string Status => OrderStatus.ToString();
         private OrderStatus OrderStatus { get; set; }
 
+        internal void SetStatus(OrderStatus orderStatus) =>
+            OrderStatus = orderStatus;
 
     }
 
     public enum OrderStatus
     {
-
         Processing = 0,
         Aproved = 1,
         Declined = 2
-
-
     }
 }
