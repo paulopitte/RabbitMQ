@@ -49,7 +49,7 @@ namespace RabbitMQWorkerConsumer
                     catch (Exception ex)
                     {
                         //Logger
-                        channel.BasicNack(ea.DeliveryTag, false, true);
+                        channel.BasicNack(ea.DeliveryTag, false, requeue: true);
                     }
                 };
                 channel.BasicConsume(queue: "orderQueue",
