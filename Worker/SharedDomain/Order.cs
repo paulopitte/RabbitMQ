@@ -1,9 +1,8 @@
-﻿namespace RabbitMqWorker.Domain
+﻿namespace RabbitMqWorker.Domain;
+public sealed record Order
 {
-    public sealed class Order
-    {
-        public int Id { get; set; }
-        public string ItemName { get; set; }
-        public decimal Price { get; set; }
-    }
+    public long Id { get; set; }
+    public string ItemName { get; set; }
+    public decimal Price { get; set; } = 0M;
 }
+

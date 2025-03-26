@@ -4,67 +4,58 @@ using RabbitMQ.Client;
 using System.Text;
 using System.Text.Json;
 
-namespace RabbitMqWorker.Controllers
+namespace RabbitMqWorker.Controllers;
+using Domain;
+
+[Route("api/[controller]")]
+[ApiController]
+
+public class OrderController(ILogger<OrderController> logger) : ControllerBase
 {
-    using Domain;
+    private readonly ILogger<OrderController> _logger = logger;
 
-    [Route("api/[controller]")]
-    [ApiController]
-
-    public class OrderController : ControllerBase
+    [HttpPost]
+    public IActionResult Insert(Order order)
     {
-        private readonly ILogger<OrderController> _logger;
-        public OrderController(ILogger<OrderController> logger)
+        try
         {
-            _logger = logger;
-        }
-
-
-
-        [HttpPost]
-        public IActionResult Insert(Order order)
-        {
-            try
+            var factory = new ConnectionFactory()
             {
-
-
-                var factory = new ConnectionFactory()
-                {
-                    UserName = "guest",
-                    Password = "guest",
-                    HostName = "127.0.0.1",
-                    Port = 5672
-                };
-                using (var connection = factory.CreateConnection())
-                using (var channel = connection.CreateModel())
-                {
-                    channel.QueueDeclare(queue: "orderQueue",
-                                         durable: false,
-                                         exclusive: false,
-                                         autoDelete: false,
-                                         arguments: null);
-
-                    string message = JsonSerializer.Serialize(order);
-                    var body = Encoding.UTF8.GetBytes(message);
-
-                    channel.BasicPublish(exchange: "",
-                                         routingKey: "orderQueue",
-                                         basicProperties: null,
-                                         body: body);
-                }
-
-
-
-                _logger.LogInformation("Pedido recebido.");
-                return Accepted();
-            }
-            catch (System.Exception)
+                UserName = "guest",
+                Password = "guest",
+                HostName = "127.0.0.1",
+                Port = 5672
+            };
+            using (var connection = factory.CreateConnection())
+            using (var channel = connection.CreateModel())
             {
-                _logger.LogError("Erro ao tentar criar um pedido.");
-                return new StatusCodeResult(500);
+                channel.QueueDeclare(queue: "orderQueue",
+                                     durable: false,
+                                     exclusive: false,
+                                     autoDelete: false,
+                                     arguments: null);
+
+                string message = JsonSerializer.Serialize(order);
+                var body = Encoding.UTF8.GetBytes(message);
+
+                channel.BasicPublish(exchange: "",
+                                     routingKey: "orderQueue",
+                                     basicProperties: null,
+                                     body: body);
             }
 
 
+
+            _logger.LogInformation("Pedido recebido.");
+            return Accepted();
         }
+        catch (System.Exception)
+        {
+            _logger.LogError("Erro ao tentar criar um pedido.");
+            return new StatusCodeResult(500);
+        }
+
+
     }
 }
+
