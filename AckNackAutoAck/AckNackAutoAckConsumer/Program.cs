@@ -94,14 +94,14 @@ namespace AckNackAutoAckConsumer
 
                     //A CONFIRMAÇÃO MANUAL É FEITA PELO CHANNEL
                     // confirma a remoção da mensagem 1 a 1 utilizando o false.
-                    channel.BasicAck(ea.DeliveryTag, false);
+                    channel.BasicAck(ea.DeliveryTag,  false);
                 }
                 catch (Exception ex)
                 {
 
 
-                    // UMA MANEIRA DE DEIXAR RESILIENTE NOSSAS APP.
-                    channel.BasicNack(ea.DeliveryTag, false, true);
+                    // UMA MANEIRA DE DEIXAR RESILIENTE NOSSAS APP, POIS DEVOLVEMOS A MENSAGEM PARA FILA.
+                    channel.BasicNack(ea.DeliveryTag, multiple: false, requeue: true);
 
 
                     // LOG ETC...

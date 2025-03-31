@@ -85,7 +85,7 @@ sealed class Program
 
 
                        WriteLine($" [x]: {message}");
-                       Thread.Sleep(500);
+                       Thread.Sleep(200);
                    }
                }
                catch (Exception ex)

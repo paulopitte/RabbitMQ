@@ -26,40 +26,38 @@ namespace PrefetchConsumer
                 Port = 5672
             };
 
-            using (var connection = factory.CreateConnection())
-            {
-                var queueName = "orderQueue";
-                var channel = await CreateChannel(connection);
-                var channel1 = await CreateChannel(connection);
+            using var connection = factory.CreateConnection();
+            var queueName = "orderQueue";
+            var channel = await CreateChannel(connection);
+            var channel2 = await CreateChannel(connection);
 
-                // para publicador nao podemos reaproveitar channels, a melhor prática será criara um channel exclusivo.
-                // para consumidor podemos reaproveitar channel, ou criar um channel para grupos de consumudores
-                channel.QueueDeclare(queue: queueName,
-                                     durable: false,
-                                     exclusive: false,
-                                     autoDelete: false,
-                                     arguments: null);
+            // para publicador nao podemos reaproveitar channels, a melhor prática será criara um channel exclusivo.
+            // para consumidor podemos reaproveitar channel, ou criar um channel para grupos de consumudores
+            channel.QueueDeclare(queue: queueName,
+                                 durable: false,
+                                 exclusive: false,
+                                 autoDelete: false,
+                                 arguments: null);
 
-                channel1.QueueDeclare(queue: queueName,
-                                    durable: false,
-                                    exclusive: false,
-                                    autoDelete: false,
-                                    arguments: null);
-
-
-                //for (int workIndex = 0; workIndex < 7; workIndex++)
-                //    BuildAndRunWorker(channel, $"Worker {workIndex}:{channelIndex}", queueName);
-
-                BuildAndRunWorker(channel, "Worker 1", queueName);
-                BuildAndRunWorker(channel1, "Worker 2", queueName);
-                BuildAndRunWorker(channel, "Worker 3", queueName);
-                BuildAndRunWorker(channel1, "Worker 4", queueName);
+            channel2.QueueDeclare(queue: queueName,
+                                durable: false,
+                                exclusive: false,
+                                autoDelete: false,
+                                arguments: null);
 
 
+            //for (int workIndex = 0; workIndex < 7; workIndex++)
+            //    BuildAndRunWorker(channel, $"Worker {workIndex}:{channelIndex}", queueName);
 
-                Console.WriteLine(" Press [enter] to exit.");
-                Console.ReadLine();
-            }
+            BuildAndRunWorker(channel, workerName: "Worker A", queueName);
+            BuildAndRunWorker(channel, workerName: "Worker B", queueName);
+            BuildAndRunWorker(channel2, workerName: "Worker C", queueName);
+            // BuildAndRunWorker(channel1, "Worker D", queueName);
+
+
+
+            Console.WriteLine(" Press [enter] to exit.");
+            Console.ReadLine();
         }
 
         private static async ValueTask<IModel> CreateChannel(IConnection connection) =>
@@ -72,7 +70,7 @@ namespace PrefetchConsumer
             // A Ideia é limitar a quantidade de mensagem obtida para o buffer para um canal.
             // prefetchCount => Limita a pegar 3 mensagem por vez.
             // global => false prefetchCount por consumer | true  prefetchCount por channel 
-            channel.BasicQos(prefetchSize: 0, prefetchCount: 3, global: false);
+            channel.BasicQos(prefetchSize: 0, prefetchCount: 2, global: false);
 
 
 

@@ -51,7 +51,7 @@ namespace RoundRobinProducer
 
 
                         WriteLine($" [x] Enviando Mensagem: {message}");
-                        await Task.Delay(100);
+                        await Task.Delay(30);
                     }
                 }
 
