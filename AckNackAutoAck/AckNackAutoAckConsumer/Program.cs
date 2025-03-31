@@ -39,10 +39,10 @@ namespace AckNackAutoAckConsumer
 
             using (var connection = factory.CreateConnection())
             {
+                var queueName = "orderQueue"; // independente do exchange
 
                 for (int channelIndex = 0; channelIndex < 2; channelIndex++)
                 {
-                    var queueName = "orderQueue"; // independente do exchange
                     var channel = await CreateChannel(connection);
 
                     // para publicador nao podemos reaproveitar channels, a melhor prática será criara um channel exclusivo.
@@ -84,15 +84,13 @@ namespace AckNackAutoAckConsumer
                 {
 
                     //AQUI TEMOS O MOMENTO DA APLICAÇÃO DE REGRAS DE NEGOCIO.
-
-
                     var body = ea.Body.ToArray();
                     var message = Encoding.UTF8.GetString(body);
                     Console.WriteLine($"{channel.ChannelNumber} - {workerName} |  [x] Recebendo Notificação {message}");
 
 
 
-                    //throw new Exception("ERRO DE REGRA DE NEGOCIO");
+                    throw new Exception("ERRO DE REGRA DE NEGOCIO");
 
                     //A CONFIRMAÇÃO MANUAL É FEITA PELO CHANNEL
                     // confirma a remoção da mensagem 1 a 1 utilizando o false.
