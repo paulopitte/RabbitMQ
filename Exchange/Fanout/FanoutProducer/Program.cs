@@ -8,6 +8,8 @@ namespace FanoutProducer
 {
     class Program
     {
+        private const string EXCHANGE = "order";
+
         static void Main(string[] args)
         {
             WriteLine("RabbitMQ -  Exchange Fanout - cópias massivas de mensagens para mais de uma fila!");
@@ -67,15 +69,17 @@ namespace FanoutProducer
             channel.QueueDeclare(queue: "order", durable: false, exclusive: false, autoDelete: false, arguments: null);
             channel.QueueDeclare(queue: "logs", durable: false, exclusive: false, autoDelete: false, arguments: null);
             channel.QueueDeclare(queue: "finance_orders", durable: false, exclusive: false, autoDelete: false, arguments: null);
+            channel.QueueDeclare(queue: "shipping_orders", durable: false, exclusive: false, autoDelete: false, arguments: null);
 
 
             // configura o nome e tipo de exchange.
-            channel.ExchangeDeclare(exchange: "order", type: "fanout");
+            channel.ExchangeDeclare(exchange: EXCHANGE, type: "fanout");
 
             // configuramos explicitamente a associação de uma fila estará ligada a um exchange.
-            channel.QueueBind(queue: "order", exchange: "order", routingKey: "");
-            channel.QueueBind(queue: "logs", exchange: "order", routingKey: "");
-            channel.QueueBind(queue: "finance_orders", exchange: "order", routingKey: "");
+            channel.QueueBind(queue: "order", exchange: EXCHANGE, routingKey: "");
+            channel.QueueBind(queue: "logs", exchange: EXCHANGE, routingKey: "");
+            channel.QueueBind(queue: "finance_orders", exchange: EXCHANGE, routingKey: "");
+            channel.QueueBind(queue: "shipping_orders", exchange: EXCHANGE, routingKey: "");
 
             return channel;
         }
@@ -101,7 +105,7 @@ namespace FanoutProducer
                             string message = $"Mensagem(Count loop) Number {menssagemNumber++} | from: {publishName} ";
                             var body = Encoding.UTF8.GetBytes(message);
 
-                            channel.BasicPublish(exchange: "order",
+                            channel.BasicPublish(exchange: EXCHANGE,
                                                  routingKey: "",
                                                  basicProperties: null,
                                                  body: body);
